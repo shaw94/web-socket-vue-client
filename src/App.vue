@@ -10,7 +10,7 @@ import Pusher from "pusher-js";
 import axios from "axios";
 
 const { data: token } = await axios.post("http://127.0.0.1:8000/api/sanctum/token", {
-  email: "user@example.app",
+  email: "web@websockets.app",
   password: "password",
 })
 
@@ -48,7 +48,7 @@ let echo = new Echo({
   },
 });
 
-echo.private('App.User.2')
+echo.private('private.chat.1')
   .listen(".chat-message", (message) => console.log(message));
 
 echo.join(`presence.chat.1`)
